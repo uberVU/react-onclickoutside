@@ -58,8 +58,8 @@
         }
       }(this.getDOMNode(), this.handleClickOutside));
 
-      document.addEventListener("mousedown", fn);
-      document.addEventListener("touchstart", fn);
+      document.addEventListener("mouseup", fn);
+      document.addEventListener("touchend", fn);
 
       var pos = registeredComponents.length;
       registeredComponents.push(this);
@@ -75,8 +75,8 @@
           // clean up so we don't leak memory
           handlers.splice(pos, 1);
           registeredComponents.splice(pos, 1);
-          document.removeEventListener("mousedown", fn);
-          document.removeEventListener("touchstart", fn);
+          document.removeEventListener("mouseup", fn);
+          document.removeEventListener("touchend", fn);
         }
       }
     }
