@@ -54,7 +54,10 @@
             if(found) return;
             source = source.parentNode;
           }
-          eventHandler(evt);
+          
+          if (source === document) {
+            eventHandler(evt);
+          }
         }
       }(this.getDOMNode(), this.handleClickOutside));
 
