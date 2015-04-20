@@ -61,7 +61,7 @@
         };
       }(this.getDOMNode(), this.handleClickOutside));
 
-      document.addEventListener("click", fn);
+      document.addEventListener('mousedown', fn);
 
       var pos = registeredComponents.length;
       registeredComponents.push(this);
@@ -77,7 +77,7 @@
           // clean up so we don't leak memory
           handlers.splice(pos, 1);
           registeredComponents.splice(pos, 1);
-          document.removeEventListener("click", fn);
+          document.removeEventListener('mousedown', fn);
         }
       }
     }
