@@ -26,7 +26,7 @@
     root.OnClickOutside = factory();
   }
 }(this, function () {
-  "use strict";
+  'use strict';
 
   // Use a parallel array because we can't use
   // objects as keys, they get toString-coerced
@@ -37,8 +37,8 @@
 
   return {
     componentDidMount: function() {
-      if(!this.handleClickOutside)
-        throw new Error("Component lacks a handleClickOutside(event) function for processing outside click events.");
+      if (!this.handleClickOutside)
+        throw new Error('Component lacks a handleClickOutside(event) function for processing outside click events.');
 
       var fn = (function(localNode, eventHandler) {
         return function(evt) {
@@ -49,16 +49,16 @@
           // a layered approach, too, but that requires going back to
           // thinking in terms of Dom node nesting, running counter
           // to React's "you shouldn't care about the DOM" philosophy.
-          while(source.parentNode) {
+          while (source.parentNode) {
             found = (source === localNode || source.classList.contains(IGNORE_CLASS));
-            if(found) return;
+            if (found) return;
             source = source.parentNode;
           }
-          
+
           if (source === document) {
             eventHandler(evt);
           }
-        }
+        };
       }(this.getDOMNode(), this.handleClickOutside));
 
       document.addEventListener("click", fn);
@@ -70,7 +70,7 @@
 
     componentWillUnmount: function() {
       var pos = registeredComponents.indexOf(this);
-      if( pos>-1) {
+      if (pos > -1) {
         var fn = handlers[pos];
 
         if (fn) {
