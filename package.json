@@ -21,7 +21,11 @@
   "bugs": {
     "url": "https://github.com/Pomax/react-onclickoutside/issues"
   },
+  "peerDependencies": {
+    "react": ">=0.12 <16"
+  },
   "dependencies": {
+    "react-dom-polyfill": "^1.0.0-beta.4",
     "classlist-polyfill": "^1.0.1"
   }
 }

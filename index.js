@@ -29,6 +29,8 @@
   'use strict';
 
   require('classlist-polyfill');
+  var React = require('react');
+  var ReactDOM = require('react-dom-polyfill')(React)
 
   // Use a parallel array because we can't use
   // objects as keys, they get toString-coerced
@@ -61,7 +63,7 @@
             eventHandler(evt);
           }
         };
-      }(this.getDOMNode(), this.handleClickOutside));
+      }(ReactDOM.findDOMNode(this), this.handleClickOutside));
 
       document.addEventListener('mousedown', fn);
 
