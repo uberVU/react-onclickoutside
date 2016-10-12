@@ -1,6 +1,6 @@
 {
   "name": "react-onclickoutside",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "An onClickOutside mixin for React components",
   "main": "index.js",
   "homepage": "https://github.com/Pomax/react-onclickoutside",
@@ -21,7 +21,11 @@
   "bugs": {
     "url": "https://github.com/Pomax/react-onclickoutside/issues"
   },
+  "peerDependencies": {
+    "react": ">=0.12 <16"
+  },
   "dependencies": {
+    "react-dom-polyfill": "^1.0.0-beta.4",
     "classlist-polyfill": "^1.0.1"
   }
 }
